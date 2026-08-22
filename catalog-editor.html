@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e79a5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Editor CW3D">
+<link rel="manifest" href="editor-manifest.json">
+<link rel="apple-touch-icon" href="editor-icon-192.png">
+<link rel="icon" href="editor-icon-192.png">
 <title>Creative Works 3D — Editor do Catálogo (uso interno)</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -513,6 +521,13 @@
     cacheCatalog(jsonText);
     toast("products.json baixado! Suba esse arquivo no GitHub Pages.");
   });
+
+  // PWA: registra o service worker pra permitir instalar o editor como app
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', ()=>{
+      navigator.serviceWorker.register('editor-service-worker.js').catch(()=>{});
+    });
+  }
 </script>
 </body>
 </html>
