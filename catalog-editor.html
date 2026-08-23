@@ -640,7 +640,7 @@
   // PWA: registra o service worker pra permitir instalar o editor como app
   if('serviceWorker' in navigator){
     window.addEventListener('load', ()=>{
-      navigator.serviceWorker.register('editor-service-worker.js').catch(()=>{});
+      navigator.serviceWorker.register('editor-service-worker.js', { scope: './catalog-editor.html' }).catch(()=>{});
     });
   }
 </script>

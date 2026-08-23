@@ -3,6 +3,7 @@
   "short_name": "CW3D Catalog",
   "description": "Wholesale catalog of handcrafted 3D-printed products - Creative Works 3D",
   "start_url": "./",
+  "id": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#faf8f6",
